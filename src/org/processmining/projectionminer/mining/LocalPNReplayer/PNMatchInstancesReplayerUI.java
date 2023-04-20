@@ -145,8 +145,9 @@ public class PNMatchInstancesReplayerUI {
         // check which algorithm is selected and adjust parameter as necessary
         if ((currentStep == testingParamStep) && (selectedAlgorithm == null)) {
             // special checking for N-best
-            if (replaySteps[algorithmStep] instanceof PNRepMatchInstancesAlgorithmStep step) {
+            if (replaySteps[algorithmStep] instanceof PNRepMatchInstancesAlgorithmStep) {
                 // which algorithm is it?
+                PNRepMatchInstancesAlgorithmStep step = (PNRepMatchInstancesAlgorithmStep) replaySteps[algorithmStep];
                 if ((step.getAlgorithm() instanceof NBestAlignmentsAlg)) {
                     if (step.getAlgorithm() instanceof BestWithFitnessBoundAlignmentsTreeAlg) {
                         ParamSettingBestWithFitnessBoundAlg paramSetting = new ParamSettingBestWithFitnessBoundAlg();
